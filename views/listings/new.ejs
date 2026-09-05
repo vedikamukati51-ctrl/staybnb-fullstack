@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay-BNB: Add a New Listing</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<%- include("../includes/navbar.ejs") %>
+
+  <div class="container">
+    <h1>Add a New Listing</h1>
+        <form method="POST" action="/listings">
+      <div>
+        <label>Title</label><br>
+                <input type="text" name="listing[title]" required>
+      </div>
+      <div>
+        <label>Headline</label><br>
+            <input type="text" name="listing[headline]">
+      </div>
+      <div>
+                <label>Description</label><br>
+        <textarea name="listing[description]"></textarea>
+      </div>
+        <div>
+        <label>Image path (e.g. /images/image-s2.png)</label><br>
+            <input type="text" name="listing[image]">
+      </div>
+      <div>
+        <label>Price ($ / day)</label><br>
+            <input type="number" name="listing[price]" required>
+      </div>
+      <div>
+                <label>Location</label><br>
+        <input type="text" name="listing[location]" required>
+      </div>
+        <div>
+        <label>Country</label><br>
+            <input type="text" name="listing[country]">
+      </div>
+      <div>
+        <label>Guests</label><br>
+            <input type="number" name="listing[guests]" value="2">
+      </div>
+      <div>
+                <label>Bedrooms</label><br>
+        <input type="number" name="listing[bedrooms]" value="1">
+      </div>
+        <div>
+        <label>Bathrooms</label><br>
+            <input type="number" name="listing[bathrooms]" value="1">
+      </div>
+      <div>
+        <label>Amenities</label><br>
+            <input type="text" name="listing[amenities]" value="WiFi / Kitchen">
+      </div>
+      <button type="submit">Add Listing</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay-BNB: Edit Listing</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<%- include("../includes/navbar.ejs") %>
+
+    <div class="container">
+    <h1>Edit Listing</h1>
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+      <div>
+        <label>Title</label><br>
+            <input type="text" name="listing[title]" value="<%= listing.title %>" required>
+      </div>
+      <div>
+                <label>Headline</label><br>
+        <input type="text" name="listing[headline]" value="<%= listing.headline %>">
+      </div>
+        <div>
+        <label>Description</label><br>
+            <textarea name="listing[description]"><%= listing.description %></textarea>
+      </div>
+      <div>
+        <label>Image path</label><br>
+            <input type="text" name="listing[image]" value="<%= listing.image %>">
+      </div>
+      <div>
+                <label>Price ($ / day)</label><br>
+        <input type="number" name="listing[price]" value="<%= listing.price %>" required>
+      </div>
+        <div>
+        <label>Location</label><br>
+            <input type="text" name="listing[location]" value="<%= listing.location %>" required>
+      </div>
+      <div>
+        <label>Country</label><br>
+            <input type="text" name="listing[country]" value="<%= listing.country %>">
+      </div>
+      <div>
+                <label>Guests</label><br>
+        <input type="number" name="listing[guests]" value="<%= listing.guests %>">
+      </div>
+        <div>
+        <label>Bedrooms</label><br>
+            <input type="number" name="listing[bedrooms]" value="<%= listing.bedrooms %>">
+      </div>
+      <div>
+        <label>Bathrooms</label><br>
+            <input type="number" name="listing[bathrooms]" value="<%= listing.bathrooms %>">
+      </div>
+      <div>
+                <label>Amenities</label><br>
+        <input type="text" name="listing[amenities]" value="<%= listing.amenities %>">
+      </div>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</body>
+</html>

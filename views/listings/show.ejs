@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay-BNB: <%= listing.title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+  <script src="https://kit.fontawesome.com/b5177d8a6f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<%- include("../includes/navbar.ejs") %>
+
+  <div class="container">
+    <h1><%= listing.title %></h1>
+        <h3><%= listing.headline %></h3>
+    <img src="<%= listing.image %>" style="max-width: 500px; border-radius: 10px;">
+    <p><%= listing.description %></p>
+      <p><%= listing.location %><% if(listing.country) { %>, <%= listing.country %><% } %></p>
+    <p><%= listing.bedrooms %> Bedroom / <%= listing.bathrooms %> Bathroom / <%= listing.amenities %></p>
+        <h4>$ <%= listing.price %> / day &mdash; up to <%= listing.guests %> guests</h4>
+
+    <div style="margin-top: 20px;">
+        <a href="/listings/<%= listing._id %>/edit"><button type="button">Edit</button></a>
+      <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE" style="display:inline;">
+            <button type="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
